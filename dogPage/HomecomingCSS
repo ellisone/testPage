@@ -24,6 +24,11 @@ img {
     max-width: 100%;
 }
 
+h1{
+
+
+}
+
 @keyframes colorize {
     0% {
         -webkit-filter: grayscale(100%);
