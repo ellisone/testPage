@@ -1,15 +1,19 @@
 int startX=mouseY;
 int startY=mouseX;
 int endX=0;
-int endY=400;
+int endY=0;
 void setup()
 {
   size(800,800);
 }
 void draw()
 {
-  strokeWeight(((int)(Math.random()*3)+3));
+  strokeWeight(3);
   background(0,0,80);
+  
+  stroke(0,100,0);
+  fill(0,100,0);
+  rect(0,700,800,100);
   
   
   stroke(0);
@@ -21,29 +25,60 @@ void draw()
   ellipse(mouseX+10,mouseY-15,20,20);
   ellipse(mouseX-10,mouseY-15,20,20);
   ellipse(mouseX,mouseY-17,20,20);
-  ellipse(mouseX,mouseY,60,35);
+  ellipse(mouseX,mouseY,60,36);
   stroke(240,(int)((Math.random()*50)+130),0);
   fill(240,(int)((Math.random()*50)+130),0);
   ellipse(mouseX-15,mouseY,18,7);
   ellipse(mouseX+15,mouseY,18,7);
+  stroke(0);
+  fill(0);
+  ellipse(mouseX-15,mouseY+6,10,8);
+  ellipse(mouseX+15,mouseY+6,10,8);
   
-  stroke((int)(Math.random()*256),(int)(Math.random()*256),(int)(Math.random()*256));
-  while(endX<height){
-  endX=startX+(int)((Math.random()*30));
-  endY=startY+(int)((Math.random()*21)-10);
-  line(startY,startX,endY,endX);
-  startX=endX;
-  startY=endY;
+  int r=(int)((Math.random()*200)+56);
+  int g=(int)((Math.random()*200)+56);
+  int b=(int)((Math.random()*200)+56);
+  
+  strokeWeight(((int)(Math.random()*3)+3));
+  stroke(r,g,b);
+  while(endX<height-50){
+    endX=startX+(int)((Math.random()*30));
+    endY=startY+(int)((Math.random()*21)-10);
+    line(startY,startX,endY,endX);
+    startX=endX;
+    startY=endY;
   
   }
   
-  for(int i=1000000000;i>0;i--){
-  }
+  strokeWeight(3);
+  stroke(230,110,0);
+  fill(230,110,0);
+  ellipse(startY+8,startX,20,30);
+  ellipse(startY-8,startX,20,30);
+  ellipse(startY,startX+15,20,5);
+  
+  stroke(230,90,0);
+  ellipse(startY,startX+2,22,32);
+  line(startY,startX+16,startY,startX-16);
+  
+  stroke(164,108,11);
+  fill(164,108,11);
+  line(startY,startX-13,startY+2,startX-20);
+  
+  
+  float SX=(float)(startX);
+  float SY=(float)(startY);
+  fill(0);
+  stroke(0);
+  ellipse(startY+10,startX,4,1);
+  ellipse(startY-10,startX,4,1);
+  strokeWeight(1);
+  curve(SY+15,SX+6,SY+7,SX+5,SY-7,SX+5,SY-15,SX+6);
   
  }
 void mousePressed()
 {
-  startX=mouseY;
+  startX=mouseY+18;
   startY=mouseX;
   endX=0;
   endY=400;
