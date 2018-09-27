@@ -1,0 +1,62 @@
+void setup()
+{
+  noLoop();
+  size(500,500);
+}
+void draw()
+{
+  background(0);
+  Die D1=new Die(5,5);
+  Die D2=new Die(60,5);
+  D1.show();
+  D2.show();
+}
+void mousePressed()
+{
+  redraw();
+}
+class Die //models one single dice cube
+{
+  int x=0;
+  int y=0;
+  int num=0;
+  Die(int place1, int place2) //constructor
+  {
+    x=place1;
+    y=place2;
+  }
+  void roll()
+  {
+    num=(int)((Math.random()*6)+1);
+    num=1;
+  }
+  void show()
+  {
+    noStroke();
+    fill(0);
+    int CD=(int)((Math.random()*3)+1);
+    if(CD==1){
+      fill(255,0,0);
+    }else if(CD==2){
+      fill(0,255,0);
+    }else{
+      fill(0,0,255);
+    }
+    rect(x,y,50,50,7);
+    roll();
+    if(CD==1){
+      fill(0,255,0);
+    }else if(CD==2){
+      fill(0,0,255);
+    }else{
+      fill(255,0,0);
+    }
+    if(num==1||num==3||num==5){
+      ellipse(x+25,y+25,10,10);
+    }else if(num==2||num==4){
+      ellipse(x+15,y+15,10,10);
+      ellipse(x+35,y+35,10,10);
+    }
+    
+  }
+}
