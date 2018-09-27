@@ -8,8 +8,22 @@ void draw()
   background(0);
   Die D1=new Die(5,5);
   Die D2=new Die(60,5);
+  Die D3=new Die(115,5);
+  Die D4=new Die(5,60);
+  Die D5=new Die(60,60);
+  Die D6=new Die(115,60);
+  Die D7=new Die(5,115);
+  Die D8=new Die(60,115);
+  Die D9=new Die(115,115);
   D1.show();
   D2.show();
+  D3.show();
+  D4.show();
+  D5.show();
+  D6.show();
+  D7.show();
+  D8.show();
+  D9.show();
 }
 void mousePressed()
 {
@@ -28,7 +42,6 @@ class Die //models one single dice cube
   void roll()
   {
     num=(int)((Math.random()*6)+1);
-    num=1;
   }
   void show()
   {
@@ -53,9 +66,22 @@ class Die //models one single dice cube
     }
     if(num==1||num==3||num==5){
       ellipse(x+25,y+25,10,10);
-    }else if(num==2||num==4){
-      ellipse(x+15,y+15,10,10);
-      ellipse(x+35,y+35,10,10);
+    }
+    if(num==2||num==3||num==4||num==5){
+      ellipse(x+12,y+12,10,10);
+      ellipse(x+38,y+38,10,10);
+    }
+    if(num==4||num==5){
+      ellipse(x+12,y+38,10,10);
+      ellipse(x+38,y+12,10,10);
+    }
+    if(num==6){
+      ellipse(x+15,y+10,10,10);
+      ellipse(x+15,y+25,10,10);
+      ellipse(x+15,y+40,10,10);
+      ellipse(x+35,y+10,10,10);
+      ellipse(x+35,y+25,10,10);
+      ellipse(x+35,y+40,10,10);
     }
     
   }
