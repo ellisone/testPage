@@ -1,7 +1,7 @@
 void setup()
 {
   noLoop();
-  size(500,500);
+  size(700,700);
 }
 void draw()
 {
@@ -9,12 +9,28 @@ void draw()
   Die D1=new Die(5,5);
   Die D2=new Die(60,5);
   Die D3=new Die(115,5);
-  Die D4=new Die(5,60);
-  Die D5=new Die(60,60);
-  Die D6=new Die(115,60);
-  Die D7=new Die(5,115);
-  Die D8=new Die(60,115);
-  Die D9=new Die(115,115);
+  Die D4=new Die(170,5);
+  Die D5=new Die(225,5);
+  Die D6=new Die(5,60);
+  Die D7=new Die(60,60);
+  Die D8=new Die(115,60);
+  Die D9=new Die(170,60);
+  Die D10=new Die(225,60);
+  Die D11=new Die(5,115);
+  Die D12=new Die(60,115);
+  Die D13=new Die(115,115);
+  Die D14=new Die(170,115);
+  Die D15=new Die(225,115);
+  Die D16=new Die(5,170);
+  Die D17=new Die(60,170);
+  Die D18=new Die(115,170);
+  Die D19=new Die(170,170);
+  Die D20=new Die(225,170);
+  Die D21=new Die(5,225);
+  Die D22=new Die(60,225);
+  Die D23=new Die(115,225);
+  Die D24=new Die(170,225);
+  Die D25=new Die(225,225);
   D1.show();
   D2.show();
   D3.show();
@@ -24,6 +40,28 @@ void draw()
   D7.show();
   D8.show();
   D9.show();
+  D10.show();
+  D11.show();
+  D12.show();
+  D13.show();
+  D14.show();
+  D15.show();
+  D16.show();
+  D17.show();
+  D18.show();
+  D19.show();
+  D20.show();
+  D21.show();
+  D22.show();
+  D23.show();
+  D24.show();
+  D25.show();
+  int total=D1.getRoll()+D2.getRoll()+D3.getRoll()+D4.getRoll()+D5.getRoll()+D6.getRoll()+D7.getRoll()+D8.getRoll()+D9.getRoll()+D10.getRoll()+D11.getRoll()+D12.getRoll()+D13.getRoll()+D14.getRoll()+D15.getRoll()+D16.getRoll()+D17.getRoll()+D18.getRoll()+D19.getRoll()+D20.getRoll()+D21.getRoll()+D22.getRoll()+D23.getRoll()+D24.getRoll()+D25.getRoll();
+  fill(255);
+  textSize(30);
+  text("total: "+total,280,20);
+  
+  
 }
 void mousePressed()
 {
@@ -42,6 +80,9 @@ class Die //models one single dice cube
   void roll()
   {
     num=(int)((Math.random()*6)+1);
+  }
+  int getRoll(){
+    return num;
   }
   void show()
   {
