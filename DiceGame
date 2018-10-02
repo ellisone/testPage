@@ -60,24 +60,79 @@ void draw()
   fill(255);
   textSize(30);
   text("Total: "+total,280,40);
-  boolean Prime=true;
-  for(int i=2;i<total;i++){
-    if(total%i!=0){
-      Prime=false;
+  String binaryTotal="";
+  int NewT=total;
+  
+  if(NewT>=128){
+    NewT=NewT%128;
+    binaryTotal=binaryTotal+"1";
+  }else{
+    binaryTotal=binaryTotal+"0";
+  }
+  if(NewT>=64){
+    NewT=NewT%64;
+    binaryTotal=binaryTotal+"1";
+  }else{
+    binaryTotal=binaryTotal+"0";
+  }
+  if(NewT>=32){
+    NewT=NewT%32;
+    binaryTotal=binaryTotal+"1";
+  }else{
+    binaryTotal=binaryTotal+"0";
+  }
+  if(NewT>=16){
+    NewT=NewT%16;
+    binaryTotal=binaryTotal+"1";
+  }else{
+    binaryTotal=binaryTotal+"0";
+  }
+  if(NewT>=8){
+    NewT=NewT%8;
+    binaryTotal=binaryTotal+"1";
+  }else{
+    binaryTotal=binaryTotal+"0";
+  }
+  if(NewT>=4){
+    NewT=NewT%4;
+    binaryTotal=binaryTotal+"1";
+  }else{
+    binaryTotal=binaryTotal+"0";
+  }
+  if(NewT>=2){
+    NewT=NewT%2;
+    binaryTotal=binaryTotal+"1";
+  }else{
+    binaryTotal=binaryTotal+"0";
+  }
+  if(NewT>=1){
+    binaryTotal=binaryTotal+"1";
+  }else{
+    binaryTotal=binaryTotal+"0";
+  }
+  text("Total in binary: "+binaryTotal,280,70);
+  
+  
+  
+  boolean prime=true;
+  for(int i=2;i<total-1;i++){
+    if(total%i==0){
+      prime=false;
     }
   }
-  textSize(15);
-  if(Prime==true){
-    text("The total is a prime number",280,80);
+  textSize(25);
+  if(prime==true){
+    text("The total is a prime number",280,100);
   }
-  if(Prime==false){
-    text("The total is not a prime number",280,80);
+  if(prime==false){
+    text("The total is not a prime number",280,100);
   }
   
 }
 void mousePressed()
 {
   redraw();
+}
 }
 class Die //models one single dice cube
 {
