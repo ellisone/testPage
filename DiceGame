@@ -59,8 +59,20 @@ void draw()
   int total=D1.getRoll()+D2.getRoll()+D3.getRoll()+D4.getRoll()+D5.getRoll()+D6.getRoll()+D7.getRoll()+D8.getRoll()+D9.getRoll()+D10.getRoll()+D11.getRoll()+D12.getRoll()+D13.getRoll()+D14.getRoll()+D15.getRoll()+D16.getRoll()+D17.getRoll()+D18.getRoll()+D19.getRoll()+D20.getRoll()+D21.getRoll()+D22.getRoll()+D23.getRoll()+D24.getRoll()+D25.getRoll();
   fill(255);
   textSize(30);
-  text("total: "+total,280,20);
-  
+  text("Total: "+total,280,40);
+  boolean Prime=true;
+  for(int i=2;i<total;i++){
+    if(total%i!=0){
+      Prime=false;
+    }
+  }
+  textSize(15);
+  if(Prime==true){
+    text("The total is a prime number",280,80);
+  }
+  if(Prime==false){
+    text("The total is not a prime number",280,80);
+  }
   
 }
 void mousePressed()
