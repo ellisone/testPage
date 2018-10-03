@@ -3,6 +3,7 @@ void setup()
   noLoop();
   size(700,700);
 }
+int totalTotal;
 void draw()
 {
   background(0);
@@ -57,9 +58,14 @@ void draw()
   D24.show();
   D25.show();
   int total=D1.getRoll()+D2.getRoll()+D3.getRoll()+D4.getRoll()+D5.getRoll()+D6.getRoll()+D7.getRoll()+D8.getRoll()+D9.getRoll()+D10.getRoll()+D11.getRoll()+D12.getRoll()+D13.getRoll()+D14.getRoll()+D15.getRoll()+D16.getRoll()+D17.getRoll()+D18.getRoll()+D19.getRoll()+D20.getRoll()+D21.getRoll()+D22.getRoll()+D23.getRoll()+D24.getRoll()+D25.getRoll();
+  //if(total>=90){
+    //total=117;
+  //}
+  totalTotal=totalTotal+total;
   fill(255);
-  textSize(30);
+  textSize(27);
   text("Total: "+total,280,40);
+  text("Total of Totals: "+totalTotal,420,40);
   String binaryTotal="";
   int NewT=total;
   
@@ -120,19 +126,22 @@ void draw()
       prime=false;
     }
   }
-  textSize(25);
+  textSize(27);
   if(prime==true){
     text("The total is a prime number",280,100);
   }
   if(prime==false){
     text("The total is not a prime number",280,100);
   }
+  if(total==117||totalTotal==117){
+    PImage MasterChef = loadImage("Master Chef.jpg");
+    image(MasterChef, 300,110,400,250);
+  }
   
 }
 void mousePressed()
 {
   redraw();
-}
 }
 class Die //models one single dice cube
 {
